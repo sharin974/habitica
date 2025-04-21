@@ -8,7 +8,7 @@ services:
     environment:
       - BASE_URL=http://server:3000
     ports:
-        - "8080:8080"
+        - "8091:8080"
     command: ["npm", "run", "client:dev"]
     depends_on:
       - server
@@ -16,7 +16,7 @@ services:
   server:
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3000"
     networks:
       - habitica
     environment:
@@ -27,7 +27,7 @@ services:
   mongo:
     image: mongo:3.6
     ports:
-      - "27017:27017"
+      - "27018:27017"
     networks:
       - habitica
 
